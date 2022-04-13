@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity  {
     private EditText etPalabra;
     private Button btnProcesar;
 
-    private String palabra,invertida;
+    private String palabra,invertida="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,17 @@ public class MainActivity extends AppCompatActivity  {
     private void invertirPalabra() {
         // Una manera directa de invertir una cadena
         // esto es netamente codigo JAVA
-        invertida=new StringBuilder(palabra).reverse().toString();
+        // invertida=new StringBuilder(palabra).reverse().toString();
+
+        // INVERTIR UNA CADENA
+        invertida="";
+        // La idea es tratar a la cadena como si fuera un array
+        // donde cad letra esta en una posicion del array
+        // para tal efecto los strings tienen un metodo que les permite
+        // devolver un caracter d euna posicion como si fuera un array
+        for (int i = this.palabra.length()-1; i >=0 ; i--) {
+            invertida=invertida+this.palabra.charAt(i);
+        }
         txtResultado.setText(invertida);
     }
 
