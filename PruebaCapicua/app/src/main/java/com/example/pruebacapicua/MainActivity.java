@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private void avisarPalindromo() {
         if (invertida.equals(palabra)){
-            txtAviso.setText("SI Es palindromo");
+            txtAviso.setText("SI es palindromo");
         }
         else{
             txtAviso.setText("NO es palindromo");
