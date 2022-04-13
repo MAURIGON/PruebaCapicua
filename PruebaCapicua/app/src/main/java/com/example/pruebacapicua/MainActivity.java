@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity  {
 
     private TextView txtResultado;
+    private TextView txtAviso;
     private EditText etPalabra;
     private Button btnProcesar;
 
@@ -62,6 +63,16 @@ public class MainActivity extends AppCompatActivity  {
             invertida=invertida+this.palabra.charAt(i);
         }
         txtResultado.setText(invertida);
+        avisarPalindromo();
+    }
+
+    private void avisarPalindromo() {
+        if (invertida.equals(palabra)){
+            txtAviso.setText("SI Es palindromo");
+        }
+        else{
+            txtAviso.setText("NO es palindromo");
+        }
     }
 
     private void recibirInformacion() {
@@ -72,6 +83,7 @@ public class MainActivity extends AppCompatActivity  {
         txtResultado=findViewById(R.id.txtResultado);
         etPalabra=findViewById(R.id.etPalabra);
         btnProcesar=findViewById(R.id.btnProcesar);
+        txtAviso=findViewById(R.id.txtAviso);
     }
 
 
