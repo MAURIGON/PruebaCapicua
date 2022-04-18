@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity  {
         Finalmente deben decirle al Toast que se muestre con esa configuracion
         y para llo usan el metodo o evento .show()
          */
-        Toast.makeText();
+        Toast.makeText(this,"Hola Mundo",Toast.LENGTH_LONG).show();
     }
 
     private void invertirPalabra() {
