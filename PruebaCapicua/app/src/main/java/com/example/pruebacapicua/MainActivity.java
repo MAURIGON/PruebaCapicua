@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -14,6 +15,7 @@ public class MainActivity extends AppCompatActivity  {
     private TextView txtAviso;
     private EditText etPalabra;
     private Button btnProcesar;
+    private Button btnMensaje;
 
     private String palabra,invertida="";
 
@@ -46,6 +48,34 @@ public class MainActivity extends AppCompatActivity  {
                 invertirPalabra();
             }
         });
+
+        btnMensaje.setOnClickListener((new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                mostrarMensaje();
+            }
+        }));
+    }
+
+    private void mostrarMensaje() {
+        // Para mostrar mensajes en pantalla, ustedes pueden usar
+        // una ventana emergente temporal llamada Toast,
+        // que básicamente sirve para mostrar información
+        // al usuario a cerca de ciertos procesos que hayan pasado,
+        // confirmaciones, mostrar algun mensaje y otros
+        // estatico
+        /*
+        El toast tiene un metodo llamado makeText que es donde configurara
+        lo que se quiere mostrar al usuario, para llo deben pasar
+        los siguientes parametros:
+        - contexto(ambito) de la pantalla donde se va a dibujar es emensaje
+        - cadena de carateres: el mensaje a mostrar
+        - Constante de duracion del mensaje en pantalla para que dure mas o menos
+        Finalmente deben decirle al Toast que se muestre con esa configuracion
+        y para llo usan el metodo o evento .show()
+         */
+        Toast.makeText();
     }
 
     private void invertirPalabra() {
@@ -84,6 +114,7 @@ public class MainActivity extends AppCompatActivity  {
         etPalabra=findViewById(R.id.etPalabra);
         btnProcesar=findViewById(R.id.btnProcesar);
         txtAviso=findViewById(R.id.txtAviso);
+        btnMensaje=findViewById(R.id.btnMensaje);
     }
 
 
