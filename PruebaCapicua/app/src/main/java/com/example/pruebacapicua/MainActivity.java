@@ -75,7 +75,9 @@ public class MainActivity extends AppCompatActivity  {
         Finalmente deben decirle al Toast que se muestre con esa configuracion
         y para llo usan el metodo o evento .show()
          */
-        Toast.makeText(this,"Hola Mundo",Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"Hola Mundo",Toast.LENGTH_LONG).show();
+        String mensajeMostrar=evaluarPalindromo();
+        Toast.makeText(this,mensajeMostrar,Toast.LENGTH_LONG).show();
     }
 
     private void invertirPalabra() {
@@ -97,12 +99,21 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void avisarPalindromo() {
-        if (invertida.equals(palabra)){
+        if (this.invertida.equals(this.palabra)){
             txtAviso.setText("SI es palindromo");
         }
         else{
             txtAviso.setText("NO es palindromo");
         }
+    }
+
+    // Para evaluar palindromo
+    private String evaluarPalindromo(){
+        String mensaje="NO es palíndromo";
+        if(this.palabra.equals(this.invertida)){
+            mensaje="Es palíndromo";
+        }
+        return mensaje;
     }
 
     private void recibirInformacion() {
